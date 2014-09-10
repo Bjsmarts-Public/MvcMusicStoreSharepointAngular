@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MvcMusicStore.Models.Genre>
+@{
+ViewBag.Title = "Store"; 
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPEhtml>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width"/>
+<title>Index</title>
+</head>
+<body>
+    <div>
+        <h3>Browse Genres</h3>
+        <p> Select from @Model.Count() genres:</p>
+        <ul>
+            @foreach (var genre in Model)
+            { 
+                <li>
+                    <a id="link-1" href ng-click="loadTemplate('/Store/Browse?Genre=@genre.Name')">@genre.Name</a><br/>
+                </li>
+            }
+        </ul>
+    </div>
+</body>
+</html>

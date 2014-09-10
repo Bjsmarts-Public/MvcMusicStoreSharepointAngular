@@ -1,0 +1,39 @@
+﻿@{
+    ViewBag.Title = "LogOn";
+}
+@{
+    Layout = null;
+}
+
+<h2>Log On</h2>
+<p>
+    Please enter your user name and password. <a id="link-1" href ng-click="loadTemplate('/Account/Register')"> Register </a> if you don't have an account.
+</p>
+
+
+<div ng-controller="LogonController">
+<span style="color: red">{{LogonValidate}}</span>
+<fieldset>
+<legend>Account Information</legend>
+
+    <form name="mainForm" ng-submit="submit()">
+
+        <div class="editor-label">
+            User name
+        </div>
+        <div class="editor-field">
+            <input type="text" ng-model="user.username" required="Este campo es requerido"/>
+        </div>
+
+        <div class="editor-label">
+            Password
+        </div>
+        <div class="editor-field">
+            <input type="password" ng-model="user.password" required/>
+        </div>
+        <p>
+            <input type="submit"value="Log On"/>
+        </p>
+    </form>
+</fieldset>
+</div>

@@ -1,0 +1,25 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPEhtml>
+
+<html>
+<head>
+<meta name="viewport"content="width=device-width"/>
+<title>WizardForm</title>
+</head>
+<body>
+<div>
+<form id="signup-form" ng-submit="processForm()">
+<!-- our nested state views will be injected here -->
+
+<div ng-include src="locationWizard"></div>
+</form>
+
+</div>
+<pre>
+    {{ Album }}
+</pre>
+</body>
+</html>

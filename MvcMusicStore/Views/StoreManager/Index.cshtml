@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "List";
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPEhtml>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width"/>
+<title>Index</title>
+</head>
+<body>
+<div style="text-align: right">{{username}}</div>
+<div style="text-align: right"><a href ng-click="logout()">{{Logout}}</a></div>
+<h2><i>Albums</i></h2>
+
+<p>
+<a id="Create" href ng-click="openCreate()"> Create New Album </a> | <a id="CreateWizard" href ng-click="openCreateWizard('first','lg')">Create New Album (Wizard)</a>
+
+</p>
+
+<table>
+<tr>
+<th></th>
+<th>
+                    Title 
+</th>
+<th>
+                    Artist
+</th>
+<th>
+                    Genre
+</th>
+<th>
+                    Price
+</th>
+</tr>
+
+<tr ng-repeat="album in Albums">
+<td>
+<a id="Edit" href ng-click="openEdit(album.AlbumId)">Edit </a>|
+<a id="Details" href ng-click="openDelete(album.AlbumId)">Delete </a>|
+<a id="Delete" href ng-click="openDetails(album.AlbumId)">Details </a>
+</td>
+<td>
+                    {{album.TitleAlbum}}
+</td>
+<td>
+                    {{album.Artist}}
+</td>
+<td>
+                    {{album.Genre}}
+</td>
+<td>
+                    {{album.PriceAlbum}}
+</td>
+
+</tr>
+
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div style="padding: 20px">
+<fieldset>
+<legend>Details Order </legend>
+    <table>
+        <tr>
+            <th>
+                Album Name
+            </th>
+           
+            <th>
+                Quantity
+            </th>
+            
+             <th>
+                Price (each)
+            </th>
+            
+        </tr>
+        <tr ng-repeat="OrderDetail in OrderDetails">
+            <td>{{OrderDetail.Album}}</td>
+           
+            <td>{{OrderDetail.Quantity}}</td>
+            
+             <td>{{OrderDetail.UnitPrice}}</td>
+        </tr>
+
+
+    </table>
+
+    <div>
+        <br/>
+        <button class="btn btn-warning" ng-click="cancel()">Back to List</button>
+    </div>
+</fieldset>
+
+</div>
+</body>
+</html>

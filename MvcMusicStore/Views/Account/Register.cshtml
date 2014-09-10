@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Register";
+}
+@{
+    Layout = null;
+}
+
+<h2>Create a New Account</h2>
+<p>
+    Use the form below to create a new account. 
+</p>
+<p>
+    Passwords are required to be a minimum of 8 characters in length.
+</p>
+<div ng-controller="RegisterController">
+<span style="color: red">{{RegisterValidate}}</span>
+
+<fieldset>
+<legend>Account Information</legend>
+<form name="mainForm" ng-submit="submit()">
+<div class="editor-label">
+                    User name
+</div>
+<div class="editor-field">
+<input type="text" ng-model="register.username"/>
+</div>
+
+<div class="editor-label">
+                    Email
+</div>
+<div class="editor-field">
+<input type="text" ng-model="register.email"/>
+</div>
+
+<div class="editor-label">
+                    Password
+</div>
+<div class="editor-field">
+<input type="password" ng-model="register.password"/>
+</div>
+
+<div class="editor-label">
+                    Confirm Password
+</div>
+<div class="editor-field">
+<input type="password" ng-model="register.confirmPassword"/>
+</div>
+
+<p>
+<input type="submit" value="Register"/>
+</p>
+</form>
+</fieldset>
+</div>

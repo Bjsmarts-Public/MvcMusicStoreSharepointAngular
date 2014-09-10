@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPEhtml>
+
+<html>
+<head>
+<meta name="viewport"content="width=device-width"/>
+<title>WizardGenreArtist</title>
+</head>
+<body>
+<div>
+<fieldset>
+<legend>Genre - Artist</legend>
+<div class="editor-field">
+
+                Genre
+</div>
+<div class="editor-field">
+
+    <select ng-model="Album.GenreId" ng-options="opt.GenreId as opt.Name for opt in LstGenre" required="required">
+         <option style="display:none" value="">Select a Genre</option>
+    </select>
+</div>
+
+<div class="editor-label">
+                Artist
+</div>
+<div class="editor-field">
+    <select ng-model="Album.ArtistId" ng-options="opt.ArtistId as opt.Name for opt in LstArtist" required="required">
+        <option style="display:none" value="">Select a Artist</option>
+    </select>
+</div>
+<div class="col-xs-6 col-xs-offset-3">
+<a ng-click="locationWizards('/StoreManager/WizardTitlePrice')"class="btn btn-block btn-info">
+                    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+</a>
+</div>
+</fieldset>
+</div>
+</body>
+</html>

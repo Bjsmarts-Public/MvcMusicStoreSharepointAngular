@@ -1,0 +1,107 @@
+﻿@model MvcMusicStore.Models.Order
+@{
+    ViewBag.Title = "AddressAndPayment";
+}
+@{
+    Layout = null;
+}
+
+<div ng-controller="AddressAndPaymentController">
+    <h2>AddressAndPayment</h2>
+    <form name="mainForm" ng-submit="submitPayment()">
+        <fieldset>
+            <legend>Order</legend>
+            
+                <input type="hidden" name="userId" value="" ng-model="userId"/>
+            <div class="editor-label">
+                First Name
+            </div>
+            <div class="editor-field">
+                <input type="text" name="firstName" value="" ng-model="payment.firstName" required/>
+            </div>
+
+            <div class="editor-label">
+                Last Name
+            </div>
+            <div class="editor-field">
+                <input type="text" name="lastName" value="" ng-model="payment.lastName" required/>
+            </div>
+
+            <div class="editor-label">
+                Address
+            </div>
+            <div class="editor-field">
+                <input type="text" name="address" value="" ng-model="payment.address" required/>
+            </div>
+
+            <div class="editor-label">
+                City
+            </div>
+            <div class="editor-field">
+                <input type="text" name="city" value="" ng-model="payment.city" required/>
+            </div>
+
+            <div class="editor-label">
+                State
+            </div>
+            <div class="editor-field">
+                <input type="text" name="state" value="" ng-model="payment.state" required/>
+            </div>
+
+            <div class="editor-label">
+                Postal Code
+            </div>
+            <div class="editor-field">
+                <input type="text" name="postalCode" value="" ng-model="payment.postalCode" smart-float required/>
+            </div>
+
+            <div class="editor-label">
+                Country
+            </div>
+            <div class="editor-field">
+               @* <input type="text" name="country" value="" ng-model="payment.country"/>*@
+                <select ng-model="payment.country" ng-options="opt.CountryId as opt.CountryName for opt in LstCountries" required="required">
+                    <option style="display:none" value="">Select a country</option>
+                </select>
+                
+                
+                @*<input type="text" data-ng-model="payment.country" list="comicstitle">
+                <datalist id="comicstitle">
+                    <option  data-ng-repeat="CountryName in LstCountries" label="{{CountryName.CountryName}}" value="{{CountryName.CountryId}}">tset</option>
+                </datalist>*@
+                
+@*                 <li data-ng-repeat="item in colours">
+          {{item.name}}
+          
+        </li>
+
+                {{colours}}dads
+                     <select class="ac-select" ac-model="disconnectedColour" ac-options="opt.name for opt in colours" 
+            ac-settings="{ comboMode: true, loadOnCreate: true, loadOnOpen: true }" ac-key="name"></select>  Colour selected: {{disconnectedColour.name}}*@
+
+                
+
+            </div>
+
+            <div class="editor-label">
+                Phone
+            </div>
+            <div class="editor-field">
+                <input type="tel" pattern="[0-9]{10}" name="phone" value="" ng-model="payment.phone" required placeholder="Phone"/>
+            </div>
+
+            <div class="editor-label">
+                Email Address
+            </div>
+            <div class="editor-field">
+                <input type="email" name="emailAddress" value="" ng-model="payment.emailAddress" required placeholder="Email"/>
+            </div>
+
+        </fieldset>
+        <input type="submit"value="Submit Order"/>
+
+    </form><br/>
+    <div>
+        <button class="btn btn-warning" ng-click="loadTemplate('/ShoppingCart/Index')">Back to List</button>
+    </div>
+</div>

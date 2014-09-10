@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPEhtml>
+
+<html>
+<head>
+<meta name="viewport"content="width=device-width"/>
+<title>WizardTitlePrice</title>
+</head>
+<body>
+<div>
+<fieldset>
+<legend>Title - Price</legend>
+<div class="editor-label">
+                Title Album
+</div>
+<div class="editor-field">
+
+<input type="text" ng-model="Album.Title" required/>
+</div>
+
+<div class="editor-label">
+                Price
+</div>
+<div class="editor-field">
+<input type="text" ng-model="Album.Price" smart-float required/>
+</div>
+<div class="col-xs-6 col-xs-offset-3">
+<a ng-click="locationWizards('/StoreManager/WizardAlbumArtUrl')"class="btn btn-block btn-info">
+                    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+</a>
+</div>
+</fieldset>
+</div>
+</body>
+</html>

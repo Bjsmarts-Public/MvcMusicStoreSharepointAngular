@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPEhtml>
+
+<html>
+<head>
+<meta name="viewport"content="width=device-width"/>
+<title>Delete</title>
+</head>
+<body>
+<div style="padding: 20px">
+<input type="hidden" ng-model="Album.AlbumId"/>
+<fieldset>
+<legend>Are you sure you want to delete this Album?</legend>
+<form name="mainForm" ng-submit="submit()">
+<div class="display-label">
+                  Album:  {{Album.TitleAlbum}}
+</div>
+<div class="display-label">
+                  Genre:   {{Album.Genre}}
+</div>
+<div class="display-label">
+                  Artist:  {{Album.Artist}}
+</div>
+<div class="display-label">
+                  Price:  {{Album.PriceAlbum}}
+</div>
+<p>
+<input type="submit"id="submit"value="Delete Record"/>
+</p>
+
+</form>
+
+<div>
+<button class="btn btn-warning" ng-click="cancel()">Back to List</button>
+</div>
+</fieldset>
+
+</div>
+</body>
+</html>

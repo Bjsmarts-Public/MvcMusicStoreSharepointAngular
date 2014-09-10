@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="95870f33e78d4851843d686b77458028" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="MvcMusicStoreModel.Album" Width="1.5" PointX="1.5380348868379534" PointY="8.7441704611965321" />
+        <EntityTypeShape EntityType="MvcMusicStoreModel.Artist" Width="1.5" PointX="3.9768633078676014" PointY="14.259149662339665" />
+        <EntityTypeShape EntityType="MvcMusicStoreModel.Cart" Width="1.5" PointX="4.8747044954796808" PointY="21.070243755853848" />
+        <EntityTypeShape EntityType="MvcMusicStoreModel.Country" Width="1.5" PointX="5.4020694910558262" PointY="24.162576060817845" />
+        <EntityTypeShape EntityType="MvcMusicStoreModel.Genre" Width="1.5" PointX="3.8234970941317719" PointY="25.568617892250707" />
+        <EntityTypeShape EntityType="MvcMusicStoreModel.OrderDetail" Width="1.5" PointX="5.125" PointY="19" />
+        <EntityTypeShape EntityType="MvcMusicStoreModel.User" Width="1.5" PointX="9.76559821784757" PointY="2.4426642369677611" />
+        <AssociationConnector Association="MvcMusicStoreModel.FK_Albums_Artists" />
+        <AssociationConnector Association="MvcMusicStoreModel.FK_Albums_Genres" />
+        <AssociationConnector Association="MvcMusicStoreModel.FK_Carts_Albums" />
+        <AssociationConnector Association="MvcMusicStoreModel.FK_OrderDetails_Albums" />
+        <EntityTypeShape EntityType="MvcMusicStoreModel.Order" Width="1.5" PointX="10.498908904613419" PointY="21.062230030569356" />
+        <AssociationConnector Association="MvcMusicStoreModel.FK_OrderDetails_Orders" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

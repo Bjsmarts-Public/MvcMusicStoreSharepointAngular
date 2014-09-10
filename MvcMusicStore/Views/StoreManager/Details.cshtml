@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPEhtml>
+
+<html>
+<head>
+<meta name="viewport"content="width=device-width"/>
+<title>Details</title>
+</head>
+<body>
+<div style="padding: 20px">
+<fieldset>
+<legend>Details Album </legend>
+
+<div class="display-label">
+                Album:  {{Album.TitleAlbum}}
+</div>
+<div class="display-label">
+                Genre:   {{Album.Genre}}
+</div>
+<div class="display-label">
+                Artist:  {{Album.Artist}}
+</div>
+<div class="display-label">
+                Price:  {{Album.PriceAlbum}}
+</div>
+<div class="display-label">
+Url Album:  {{Album.AlbumArtUrl}}
+</div>
+
+<div>
+<button class="btn btn-warning" ng-click="cancel()">Back to List</button>
+</div>
+</fieldset>
+
+</div>
+</body>
+</html>

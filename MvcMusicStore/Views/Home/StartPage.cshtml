@@ -1,0 +1,26 @@
+﻿
+@model List<MvcMusicStore.Models.Album>
+@{
+    ViewBag.Title = "ASP.NET MVC Music Store";
+}
+@{
+    Layout = null;
+}
+<div id="promotion">
+</div>
+<h3><em>Fresh</em> off the grill</h3>
+
+<ul id="album-list">@foreach (var Album in Model)
+{
+<li>
+<a id="link-1" href ng-click="loadTemplate('/Store/Details?id=@Album.AlbumId')">
+<img alt="@Album.Title"src="@Album.AlbumArtUrl"/><span>@Album.Title</span>
+</a><br/>
+
+</li>
+}
+</ul>
+
+
+
+

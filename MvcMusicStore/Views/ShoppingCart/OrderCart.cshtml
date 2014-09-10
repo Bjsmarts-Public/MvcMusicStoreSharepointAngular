@@ -1,0 +1,68 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>OrderCart</title>
+</head>
+<body>
+    <div style="width:700px">
+        <div style="text-align: right">{{username}}</div>
+        <div style="text-align: right"><a href ng-click="logout()">{{Logout}}</a></div>
+
+        <p class="button">
+            <a id="link-1" href ng-click=" loadTemplate('/ShoppingCart/Index')">View current order >></a>
+        </p>
+        <h2><i>Order list</i></h2>
+        <table >
+            <tr>
+                <th></th>
+                <th>
+                    Name 
+                </th>
+                <th>
+                    Address
+                </th>
+                <th>
+                    Country
+                </th>
+                <th>
+                    State
+                </th>
+                <th>
+                    Email
+                </th>
+            </tr>
+
+            <tr ng-repeat="Order in Orders">
+                <td>
+                    <a id="Delete" href ng-click="openDetailsOrder(Order.OrderId,'lg')">Details </a>
+                </td>
+                <td>
+                    {{Order.FirstName}} {{Order.LastName}} 
+                </td>
+                <td>
+                    {{Order.Address}}
+                </td>
+                <td>
+                    {{Order.Country}}
+                </td>
+                <td>
+                    {{Order.State}}
+                </td>
+                <td>
+                    {{Order.Email}}
+                </td>
+
+
+            </tr>
+
+
+        </table>
+    </div>
+</body>
+</html>

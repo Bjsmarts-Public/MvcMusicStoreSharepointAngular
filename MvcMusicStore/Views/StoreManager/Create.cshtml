@@ -1,0 +1,68 @@
+﻿@model MvcMusicStore.Models.Album
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPEhtml>
+
+<html>
+<head>
+<meta name="viewport"content="width=device-width"/>
+<title>Create</title>
+</head>
+<body>
+<div style="padding: 20px">
+
+<fieldset>
+<legend>Create new Album</legend>
+<form name="mainForm" ng-submit="submit()">
+<div class="editor-field">
+@Html.LabelFor(model => model.GenreId, "Genre")
+</div>
+<div class="editor-field">
+@Html.DropDownList("GenreId", (IEnumerable<SelectListItem>)ViewBag.UnitConversionId, "No Unit Seleced", new { ng_model="data.GenreId" })
+</div>
+<div class="editor-label">
+@Html.LabelFor(model => model.ArtistId, "Artist") 
+</div>
+<div class="editor-field">
+@Html.DropDownList("ArtistId", (IEnumerable<SelectListItem>)ViewBag.UnitConversionId, "No Unit Seleced", new { ng_model="data.ArtistId" })
+</div>
+<div class="editor-label">
+@Html.LabelFor(model => model.Title) 
+</div>
+<div class="editor-field">
+@Html.TextBoxFor(model => model.Title, new { ng_model = "data.Title" })
+</div>
+
+<div class="editor-label">
+@Html.LabelFor(model => model.Price) 
+</div>
+<div class="editor-field">
+@Html.TextBoxFor(model => model.Price, new { ng_model = "data.Price" })
+</div>
+
+<div class="editor-label">
+@Html.LabelFor(model => model.AlbumArtUrl)
+</div>
+<div class="editor-field">
+@Html.TextBoxFor(model => model.AlbumArtUrl, new { ng_model = "data.AlbumArtUrl" })
+</div>
+
+<p>
+<input type="submit" id="submit" value="Create Record"/>
+</p>
+
+</form>
+
+<div>
+<button class="btn btn-warning" ng-click="cancel()">Back to List</button>
+</div>
+</fieldset>
+
+
+</div>
+</body>
+</html>
+

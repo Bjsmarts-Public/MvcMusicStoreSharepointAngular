@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MvcMusicStore.Models.Genre>
+
+<ul id="categories">@foreach (var genre in Model)
+
+                     {
+<li>
+<a id="link-1" href ng-click="loadTemplate('/Store/Browse?Genre=@genre.Name')">@genre.Name</a><br/>
+</li>
+                     }
+</ul>

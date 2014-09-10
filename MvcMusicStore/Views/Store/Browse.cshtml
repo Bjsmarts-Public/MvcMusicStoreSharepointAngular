@@ -1,0 +1,37 @@
+﻿@model MvcMusicStore.Models.Genre
+@{
+    ViewBag.Title = "Browse Albums"; 
+}
+@{
+    Layout = null;
+}
+
+<!DOCTYPEhtml>
+
+<html>
+<head>
+<meta name="viewport"content="width=device-width"/>
+<title>Brownse</title>
+</head>
+<body>
+    <div class="genre" style="width:700px">
+        <h3><em>@Model.Name</em> Albums</h3>
+        <ul id="album-list">
+            @foreach (var album in Model.Albums)
+            {
+                <li>
+
+                    <a id="link-1" href ng-click="loadTemplate('/Store/Details?id=@album.AlbumId')">
+
+                        <img alt="@album.Title"src="@album.AlbumArtUrl"/>
+
+                        <span>@album.Title</span>
+                    </a>
+
+                </li>
+            } 
+        </ul>
+
+    </div>
+</body>
+</html>

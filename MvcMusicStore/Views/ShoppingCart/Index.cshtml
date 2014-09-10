@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@{
+    Layout = null;
+}
+<div style="width:700px">
+    <h3>
+        <em>Review</em> your cart:
+    </h3>
+    <p class="button">
+        <a id="link-1" href ng-click="loadTemplate('/Checkout/AddressAndPayment')">Checkout >></a>
+    </p>
+
+    <div id="update-message">
+
+    </div>
+    <table>
+        <tr>
+            <th>
+                Album Name
+            </th>
+            <th>
+                Price (each)
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th></th>
+        </tr>
+        <tr ng-repeat="album in objAlbum">
+
+            <td>{{album.Album}}</td>
+            <td>{{album.Price}}</td>
+            <td>{{album.Count}}</td>
+            <td><a id="link-1" href ng-click="removeCart(album.RecordId)">Remove from Cart</a></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td></td>
+            <td></td>
+            <td id="cart-total"> {{CartTotal}}</td>
+        </tr>
+
+    </table>
+    <br/>
+    <div>
+        <button class="btn btn-warning" ng-click="loadTemplate('/Store/Index')">Back to List</button>
+    </div>
+</div>

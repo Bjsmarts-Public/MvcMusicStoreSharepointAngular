@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="es" ng-app="AppLayout">
+<head><title>@ViewBag.Title</title>
+</head>
+<body ng-controller="MainCtrl">
+
+<div id="header">
+<div>
+<h1><a href="/">ASP.NET MVC MUSIC STORE</a></h1>
+<ul id="navlist">
+<li class="first">
+<a href ng-click="loadTemplate('/Home/StartPage')">Home</a>
+</li>
+<li>
+<a href ng-click="loadTemplate('/Store/Index')">Store</a>
+</li>
+<li>
+<a href ng-click="loadTemplate('/ShoppingCart/OrderCart')">Cart {{cartCount}}</a>
+</li>
+<li>
+<a href ng-click="loadTemplate('/StoreManager/Index')">Admin</a>
+</li>
+</ul>
+</div>
+</div>
+
+<div style="width: 100%">
+
+@{
+Html.RenderAction("GenreMenu", "Store");
+}
+
+<div id="main">
+<div ng-include src="sidebar.location"></div>
+
+@RenderBody()
+</div>
+</div>
+<div id="footer">
+built with <a href="http://asp.net/mvc">ASP.NET MVC 3</a>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@RenderSection("scripts", required: false)
+
+<!-- Script files-->
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/angular-1.2.10.min.js"></script>
+    <script src="~/Scripts/ui-bootstrap-tpls-0.11.0.js"></script>
+    
+        <script type="text/javascript" src="~/Scripts/acute.select/acute.select.js"></script>
+    <script src="~/App/app.js"></script>
+    <script src="~/App/controllers/AccountController.js"></script>
+    <script src="~/App/controllers/CheckoutController.js"></script>
+
+<link href="~/Content/themes/base/bootstrap.min.css" rel="stylesheet">
+<link href="~/Content/Site.css" rel="stylesheet">
+    
+</body>
+</html>
+
